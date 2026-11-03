@@ -6,7 +6,6 @@
 
 body {
     font-family: Arial, sans-serif;
-    /* Основной фиолетовый космос на весь экран */
     background: url('6511984.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #fff;
@@ -18,20 +17,17 @@ body {
 }
 
 .contact-container {
-    /* Компактная карточка с четкой текстурой туманности внутри */
     background: url('fantasy-style-galaxy-background.jpg') no-repeat center center;
     background-size: cover;
     position: relative;
     border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 30px 35px;
     width: 100%;
-    max-width: 460px; /* Сделали контейнер чуть аккуратнее и компактнее */
+    max-width: 460px;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
     border-radius: 10px;
     overflow: hidden;
 }
-
-/* Плотное затемнение, чтобы текст и поля были максимально контрастными и читаемыми */
 .contact-container::before {
     content: '';
     position: absolute;
@@ -58,7 +54,7 @@ h1 {
 }
 
 .form-group {
-    margin-bottom: 16px; /* Уменьшили отступы, чтобы форма стала компактнее */
+    margin-bottom: 16px;
 }
 
 label {
