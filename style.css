@@ -1,119 +1,169 @@
-*
-{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-body
-{
+
+body {
     font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
-    color: #111;
+    /* Основной фиолетовый космос на весь экран */
+    background: url('6511984.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 40px 20px;
+    padding: 30px 20px;
 }
-.contact-container
-{
-    background: #ffffff;
-    padding: 40px;
+
+.contact-container {
+    /* Компактная карточка с четкой текстурой туманности внутри */
+    background: url('fantasy-style-galaxy-background.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 30px 35px;
     width: 100%;
-    max-width: 500px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    max-width: 460px; /* Сделали контейнер чуть аккуратнее и компактнее */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+    border-radius: 10px;
+    overflow: hidden;
 }
-h1
-{
-    font-size: 32px;
+
+/* Плотное затемнение, чтобы текст и поля были максимально контрастными и читаемыми */
+.contact-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(8, 8, 12, 0.78);
+    z-index: 1;
+}
+
+.contact-container * {
+    position: relative;
+    z-index: 2;
+}
+
+h1 {
+    font-size: 28px;
     font-weight: normal;
     text-align: center;
-    margin-bottom: 35px;
-    letter-spacing: 0.5px;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    color: #fff;
 }
-.form-group
-{
-    margin-bottom: 22px;
+
+.form-group {
+    margin-bottom: 16px; /* Уменьшили отступы, чтобы форма стала компактнее */
 }
-label
-{
+
+label {
     display: block;
-    font-size: 13px;
-    margin-bottom: 8px;
-    color: #222;
+    font-size: 12px;
+    margin-bottom: 6px;
+    color: #dfdfdf;
 }
+
 input[type="text"],
 input[type="email"],
+input[type="password"],
 input[type="tel"],
 input[type="number"],
 select,
 input[type="time"] {
     width: 100%;
-    padding: 10px 12px;
-    border: 1px solid #ccc;
-    background: #fff;
-    font-size: 14px;
+    padding: 8px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    font-size: 13px;
     outline: none;
-    border-radius: 0;
+    border-radius: 4px;
 }
+
 input:focus, select:focus {
-    border-color: #000;
+    border-color: #9d4edd;
+    box-shadow: 0 0 8px rgba(157, 78, 221, 0.5);
 }
+
+.email-wrapper {
+    display: flex;
+    gap: 8px;
+}
+
+.email-select {
+    width: 140px;
+    background: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 8px;
+    border-radius: 4px;
+}
+
 .datetime-grid {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr 1.2fr;
-    gap: 10px;
+    gap: 8px;
 }
-.sub-label
-{
-    font-size: 11px;
-    color: #666;
-    margin-bottom: 4px;
+
+.sub-label {
+    font-size: 10px;
+    color: #aaa;
+    margin-bottom: 3px;
     display: block;
 }
+
 .radio-group {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    margin-top: 5px;
+    gap: 6px;
+    margin-top: 4px;
 }
-.radio-label, .checkbox-group label
-{
-    font-size: 13px;
+
+.radio-label, .checkbox-group label {
+    font-size: 12px;
     font-weight: normal;
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 8px;
+    color: #dfdfdf;
 }
+
 input[type="radio"],
-input[type="checkbox"]
-{
-    accent-color: #000;
-    width: 15px;
-    height: 15px;
+input[type="checkbox"] {
+    accent-color: #9d4edd;
+    width: 14px;
+    height: 14px;
     cursor: pointer;
 }
-.checkbox-group
-{
+
+.checkbox-group {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin: 25px 0;
+    margin: 18px 0;
 }
-.submit-btn
-{
+
+.submit-btn {
     width: 100%;
-    background-color: #000;
-    color: #fff;
+    background: #ffffff;
+    color: #000;
     border: none;
-    padding: 14px;
+    padding: 12px;
     font-size: 14px;
+    font-weight: bold;
     cursor: pointer;
     text-align: center;
-    transition: background 0.2s ease;
+    border-radius: 4px;
+    transition: all 0.2s ease;
 }
-.submit-btn:hover
-{
-    background-color: #333;
+
+.submit-btn:hover {
+    background: #9d4edd;
+    color: #fff;
 }

@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacts</title>
+    <title>Contact / Booking</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="contact-container">
         <h1>Contact</h1>
-        <form action="#" method="post">
+        <form action="#" method="POST">
             <div class="form-group">
                 <label for="firstname">First name</label>
                 <input type="text" id="firstname" name="firstname" required>
@@ -19,8 +19,24 @@
                 <input type="text" id="lastname" name="lastname" required>
             </div>
             <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
+                <label for="email">Email address</label>
+                <div class="email-wrapper">
+                    <input type="text" id="email" name="email_user" placeholder="your_name" required>
+                    <select name="email_domain" class="email-select">
+                        <option value="@gmail.com">@gmail.com</option>
+                        <option value="@ukr.net">@ukr.net</option>
+                        <option value="@itstep.academy">@itstep.academy</option>
+                        <option value="@itstep.org">@itstep.org</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password (6-10 chars, letters, numbers, - . / #)</label>
+                <input type="password" id="password" name="password" 
+                       minlength="6" maxlength="10" 
+                       pattern="[A-Za-z0-9\-./#]+" 
+                       title="От 6 до 10 символов. Разрешены буквы, цифры и знаки - . / #" 
+                       required>
             </div>
             <div class="form-group">
                 <label for="phone">Phone</label>
@@ -31,7 +47,7 @@
                 <div class="datetime-grid">
                     <div>
                         <span class="sub-label">Day</span>
-                        <input type="number" name="day" min="1" max="31" placeholder="">
+                        <input type="number" name="day" min="1" max="31">
                     </div>
                     <div>
                         <span class="sub-label">Month</span>
@@ -53,7 +69,7 @@
                     </div>
                     <div>
                         <span class="sub-label">Year</span>
-                        <input type="number" name="year" placeholder="">
+                        <input type="number" name="year">
                     </div>
                     <div>
                         <span class="sub-label">Time</span>
@@ -64,13 +80,11 @@
             <div class="form-group">
                 <label>Seating preference</label>
                 <div class="radio-group">
-                    <label>
+                    <label class="radio-label">
                         <input type="radio" name="seating" value="indoor"> Indoor
-                        Indoor
                     </label>
-                    <label>
+                    <label class="radio-label">
                         <input type="radio" name="seating" value="outdoor"> Outdoor
-                        Outdoor
                     </label>
                 </div>
             </div>
@@ -83,7 +97,9 @@
                 <label for="newsletter">Yes, subscribe me to your newsletter.</label>
             </div>
             <button type="submit" class="submit-btn">Request booking</button>
+
         </form>
     </div>
+
 </body>
 </html>
